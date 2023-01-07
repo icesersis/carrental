@@ -56,10 +56,8 @@ public class CarRental extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         txPapar = new javax.swing.JTextArea();
         jPanel6 = new javax.swing.JPanel();
-        btnCal = new javax.swing.JButton();
         btnSave = new javax.swing.JButton();
         btnDel = new javax.swing.JButton();
-        btnUpd = new javax.swing.JButton();
         btnDis = new javax.swing.JButton();
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -154,13 +152,6 @@ public class CarRental extends javax.swing.JFrame {
             .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 179, Short.MAX_VALUE)
         );
 
-        btnCal.setText("CALCULATE");
-        btnCal.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCalActionPerformed(evt);
-            }
-        });
-
         btnSave.setText("SAVE");
         btnSave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -172,13 +163,6 @@ public class CarRental extends javax.swing.JFrame {
         btnDel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDelActionPerformed(evt);
-            }
-        });
-
-        btnUpd.setText("UPDATE");
-        btnUpd.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnUpdActionPerformed(evt);
             }
         });
 
@@ -284,47 +268,6 @@ public class CarRental extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnCalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalActionPerformed
-        // TODO add your handling code here:
-        double x,y;
-        
-        if(txID.getText().equals("")){
-            JOptionPane.showMessageDialog(null, "Please enter ID blank.");
-        }
-            
-            if(txModel.getText().equals("Kancil")|| txModel.getText().equals("kancil")){
-            x=Double.parseDouble(txHours.getText());
-            y=x*4.00;
-            txPrice.setText(""+y);
-            }
-        
-            if(txModel.getText().equals("Saga")|| txModel.getText().equals("saga")){
-            x=Double.parseDouble(txHours.getText());
-            y=x*6.00;
-            txPrice.setText(""+y);
-            
-            }
-        
-            if(txModel.getText().equals("Accord")|| txModel.getText().equals("accord")){
-            x=Double.parseDouble(txHours.getText());
-            y=x*8.00;
-            txPrice.setText(""+y);
-            
-            }
-            
-            if(txModel.getText().equals("Myvi")|| txModel.getText().equals("myvi")){
-            x=Double.parseDouble(txHours.getText());
-            y=x*7.00;
-           txPrice.setText(""+y);
-            }
-        
-            if(txModel.getText().equals("Wira")|| txModel.getText().equals("wira")){
-            x=Double.parseDouble(txHours.getText());
-            y=x*5.00;
-            txPrice.setText(""+y);
-           }
-    }//GEN-LAST:event_btnCalActionPerformed
-
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         // TODO add your handling code here:
         try{
@@ -371,14 +314,6 @@ public class CarRental extends javax.swing.JFrame {
         catch(Exception ex){}
     }//GEN-LAST:event_btnDelActionPerformed
 
-    private void btnUpdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdActionPerformed
-        // TODO add your handling code here:
-        try{
-            connection("update details set Cars = '"+txCars.getText()+"', Model = '"+txModel.getText()+"', Hours = '"+txHours.getText()+"',"
-                    + " Price = "+txPrice.getText()+" where OrderID = "+txID.getText());
-            }
-            catch(Exception ex){}
-    }//GEN-LAST:event_btnUpdActionPerformed
 
     public void connection(String query){
            Connection con = null;
