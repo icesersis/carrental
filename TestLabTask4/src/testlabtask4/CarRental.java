@@ -159,13 +159,6 @@ public class CarRental extends javax.swing.JFrame {
             }
         });
 
-        btnDel.setText("DELETE");
-        btnDel.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDelActionPerformed(evt);
-            }
-        });
-
         btnDis.setText("DISPLAY");
         btnDis.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -305,15 +298,6 @@ public class CarRental extends javax.swing.JFrame {
             }
     }//GEN-LAST:event_btnDisActionPerformed
 
-    private void btnDelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDelActionPerformed
-        // TODO add your handling code here:
-        try{
-            connection("delete from details where OrderID = "+txID.getText());
-            }
-        
-        catch(Exception ex){}
-    }//GEN-LAST:event_btnDelActionPerformed
-
 
     public void connection(String query){
            Connection con = null;
@@ -365,11 +349,8 @@ public class CarRental extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCal;
-    private javax.swing.JButton btnDel;
     private javax.swing.JButton btnDis;
     private javax.swing.JButton btnSave;
-    private javax.swing.JButton btnUpd;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
